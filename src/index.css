@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 210 100% 97%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 210 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 100% 95%;
+    --secondary-foreground: 210 100% 25%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 153 100% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 40%;
+
+    --radius: 0.75rem;
+
+    --gradient-start: 210 100% 40%;
+    --gradient-end: 153 100% 33%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 210 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 100% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 210 100% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(210 100% 40%), hsl(153 100% 33%));
+  }
+
+  .gradient-bg {
+    background-image: linear-gradient(135deg, hsl(210 100% 40%), hsl(153 100% 33%));
+  }
+
+  .gradient-bg-hover {
+    background-image: linear-gradient(135deg, hsl(210 100% 50%), hsl(153 100% 40%));
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(210 100% 40% / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(210 100% 40% / 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .radial-glow {
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, hsl(210 100% 40% / 0.06), transparent);
+  }
+
+  .radial-glow-center {
+    background: radial-gradient(ellipse 50% 50% at 50% 50%, hsl(153 100% 33% / 0.04), transparent);
+  }
+
+  .section-light {
+    background-color: hsl(210 100% 97%);
+  }
+
+  .blob-shape {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for light theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(210 20% 95%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(210 100% 40% / 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(210 100% 40% / 0.5);
+}
